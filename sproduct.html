@@ -13,21 +13,6 @@
         <div class="single-pro-image">
             <img src="./assets/f1.jpg" width="100%" id="mainImg" alt="">
 
-            <div class="small-img-group">
-                <div class="small-img-col">
-                    <img src="./assets/f1.jpg" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="./assets/f4.jpg" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="./assets/f2.jpg" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="./assets/f3.jpg" width="100%" class="small-img" alt="">
-                </div>
-            </div>
-
         </div>
 
         <div class="single-pro-details">
@@ -41,6 +26,14 @@
                 <option>XL</option>
                 <option>XLL</option>
             </select>
+
+            <select id="mySelect">
+                <option value="yellow">Yellow</option>
+                <option value="white">White</option>
+                <option value="green">Green</option>
+                <option value="brown">Brown</option>
+            </select>
+
             <input type="number" value="1">
             <button class="normal">Add To Cart</button>
             <h4>Product Details</h4>
@@ -55,21 +48,30 @@
 
     <script>
         let mainImg = document.getElementById("mainImg");
-        let smallImg = document.getElementsByClassName("small-img")
 
-        smallImg[1].onclick = () => {
-            mainImg.src = smallImg[1].src;
-        }
-        smallImg[0].onclick = () => {
-            mainImg.src = smallImg[0].src;
-        }
-        smallImg[2].onclick = () => {
-            mainImg.src = smallImg[2].src;
-        }
-        smallImg[3].onclick = () => {
-            mainImg.src = smallImg[3].src;
-        }
-        
+        var selectElement = document.getElementById("mySelect");
+
+        selectElement.addEventListener('change', function () {
+            const selectedOption = selectElement.value;
+
+            if (selectedOption === 'yellow') {
+                mainImg.src = "./assets/f1.jpg"
+            }
+            if (selectedOption === 'white') {
+                mainImg.src = "./assets/f4.jpg"
+            }
+            if (selectedOption === 'green') {
+                mainImg.src = "./assets/f2.jpg"
+            }
+            if (selectedOption === 'brown') {
+                mainImg.src = "./assets/f3.jpg"
+            }
+        });
+
+
+
+
+
     </script>
 
 </body>
